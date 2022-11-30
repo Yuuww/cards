@@ -39,6 +39,7 @@ body {
     background-color: #232323;
 }
 #tf {
+    height: 46px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -62,9 +63,6 @@ svg {
 .path-white {
     fill: #d9d9d9;
 }
-.hide {
-    display: none;
-}
 .show {
     height: 100%;
     width: 100%;
@@ -75,4 +73,7 @@ svg {
 }
 .show:hover {
     background-color: #232323;
+}
+.hide {
+    display: none;
 }
