@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    color: #d9d9d9;
+    font-family: 'Segoe UI';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main {
+    width: 400px;
+    display: grid;
+    gap: 10px;
+}
+.button {
+    border-radius: 8px;
+    height: 46px;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    overflow: hidden;
+    border-radius: 8px;
+    height: 200px;
+    background-color: #141414;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#switch {
+    background-color: #141414;
+}
+#switch:hover {
+    background-color: #232323;
+}
+#tf {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+#true {
+    background-color: #20b25d;
+}
+#true:hover {
+    background-color: #28d670;
+}
+#false {
+    background-color: #dc294d;
+}
+#false:hover {
+    background-color: #ff2f59;
+}
+svg {
+    height: 24px;
+    width: 24px;
+}
+.path-white {
+    fill: #d9d9d9;
+}
+.hide {
+    display: none;
+}
+.show {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.show:hover {
+    background-color: #232323;
+}
