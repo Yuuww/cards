@@ -77,3 +77,6 @@ svg {
 .hide {
     display: none;
 }
+.nope {
+    visibility: hidden;
+}

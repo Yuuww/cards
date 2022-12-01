@@ -7,8 +7,9 @@
     </head>
     <body>
         <div id="main">
+            <div id="progress"></div>
             <div id="one" class="card"></div>
-            <div id="switch" class="button">
+            <div id="switch" class="button" onclick="swapCards()">
                 <svg viewBox="0 0 24 24">
                     <path class="path-white" d="M7.53,12.77V6.42l-2.03,2.03-2.12-2.12L9.02,.67l5.68,5.63-2.12,2.12-2.03-2v6.35h-3.02Zm7.45,10.52l-5.65-5.65,2.12-2.12,2,2.02v-6.35h3.02v6.35l2.02-2.02,2.12,2.12-5.65,5.65Z"/>
                 </svg>
@@ -21,13 +22,13 @@
                 </div>
                 <div id="content" class="hide"></div>
             </div>
-            <div id="tf">
+            <div id="tf" class="nope">
                 <div id="true" class="button" onclick="right()">
                     <svg viewBox="0 0 24 24">
                         <path d="M9.57,18.65L3.25,12.32l2.18-2.18,4.15,4.18L18.6,5.3l2.15,2.18-11.18,11.17Z"/>
                     </svg>
                 </div>
-                <div id="false" class="button">
+                <div id="false" class="button" onclick="wrong()">
                     <svg viewBox="0 0 24 24">
                         <path d="M6.47,19.65l-2.1-2.12,5.5-5.52L4.38,6.47l2.1-2.12,5.53,5.53,5.52-5.53,2.1,2.12-5.5,5.53,5.5,5.52-2.1,2.12-5.52-5.52-5.53,5.52Z"/>
                     </svg>
