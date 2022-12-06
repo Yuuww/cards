@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 0 10px;
     height: 100vh;
     background-color: black;
     color: #d9d9d9;
@@ -79,4 +79,53 @@ svg {
 }
 .nope {
     visibility: hidden;
+}
+.no {
+    display: none;
+}
+.yes {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background-color: #141414;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.retry {
+    position: absolute;
+    bottom: 70px;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 46px;
+    width: 300px;
+    background-color: #232323;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.retry {
+    background-color: #2e2e2e;
+}
+.yey {
+    position: absolute;
+    top: 100px;
+    height: 96px;
+    width: 96px;
+}
+.wow {
+    fill: #d9d9d9;
+}
+@media (max-width: 520px) {
+	.yes {
+        width: 100%;
+        height: 100vh;
+    }
 }

@@ -25,7 +25,94 @@ function loadHiragana() {
         ['ち', 'chi'],
         ['つ', 'tsu'],
         ['て', 'te'],
-        ['と', 'to']
+        ['と', 'to'],
+        ['な', 'na'],
+        ['に', 'ni'],
+        ['ぬ', 'nu'],
+        ['ね', 'ne'],
+        ['の', 'no'],
+        ['は', 'ha'],
+        ['ひ', 'hi'],
+        ['ふ', 'fu'],
+        ['へ', 'he'],
+        ['ほ', 'ho'],
+        ['ま', 'ma'],
+        ['み', 'mi'],
+        ['む', 'mu'],
+        ['め', 'me'],
+        ['も', 'mo'],
+        ['や', 'ya'],
+        ['ゆ', 'yu'],
+        ['よ', 'yo'],
+        ['ら', 'ra'],
+        ['り', 'ri'],
+        ['る', 'ru'],
+        ['れ', 're'],
+        ['ろ', 'ro'],
+        ['わ', 'wa'],
+        ['を', 'wo'],
+        ['ん', 'n'],
+        ['が', 'ga'],
+        ['ぎ', 'gi'],
+        ['ぐ', 'gu'],
+        ['げ', 'ge'],
+        ['ご', 'go'],
+        ['ざ', 'za'],
+        ['じ', 'ji'],
+        ['ず', 'zu'],
+        ['ぜ', 'ze'],
+        ['ぞ', 'zo'],
+        ['だ', 'da'],
+        ['ぢ', 'ji / dji / jyi'],
+        ['づ', 'zu / dzu'],
+        ['で', 'de'],
+        ['ど', 'do'],
+        ['ば', 'ba'],
+        ['び', 'bi'],
+        ['ぶ', 'bu'],
+        ['べ', 'be'],
+        ['ぼ', 'bo'],
+        ['ぱ', 'pa'],
+        ['ぴ', 'pi'],
+        ['ぷ', 'pu'],
+        ['ぺ', 'pe'],
+        ['ぽ', 'po'],
+        ['きゃ', 'kya'],
+        ['きゅ', 'kyu'],
+        ['きょ', 'kyo'],
+        ['しゃ', 'sha'],
+        ['しゅ', 'shu'],
+        ['しょ', 'sho'],
+        ['ちゃ', 'cha'],
+        ['ちゅ', 'chu'],
+        ['ちょ', 'cho'],
+        ['にゃ', 'nya'],
+        ['にゅ', 'nyu'],
+        ['にょ', 'nyo'],
+        ['ひゃ', 'hya'],
+        ['ひゅ', 'hyu'],
+        ['ひょ', 'hyo'],
+        ['みゃ', 'mya'],
+        ['みゅ', 'myu'],
+        ['みょ', 'myo'],
+        ['りゃ', 'rya'],
+        ['りゅ', 'ryu'],
+        ['りょ', 'ryo'],
+        ['ぎゃ', 'gya'],
+        ['ぎゅ', 'gyu'],
+        ['ぎょ', 'gyo'],
+        ['じゃ', 'ja'],
+        ['じゅ', 'ju'],
+        ['じょ', 'jo'],
+        ['ぢゃ', 'ja / dja'],
+        ['ぢゅ', 'ju / dju'],
+        ['ぢょ', 'jo / djo'],
+        ['びゃ', 'bya'],
+        ['びゅ', 'byu'],
+        ['びょ', 'byo'],
+        ['ぴゃ', 'pya'],
+        ['ぴゅ', 'pyu'],
+        ['ぴょ', 'pyo']
     ];
 }
 updateProgress();
@@ -36,7 +123,12 @@ function updateProgress() {
 generateCard();
 function generateCard() {
     if(usedNumbers.length == hiragana.length) {
-        if(wrongNumbers.length == 0) return;
+        if(wrongNumbers.length == 0) {
+            const element = document.getElementById("end");
+            element.classList.toggle("no");
+            element.classList.toggle("yes");
+            return;
+        };
         let newArray = [];
         for(let i of wrongNumbers) {
             newArray.push(hiragana[i]);
@@ -105,49 +197,19 @@ function right() {
 function wrong() {
     if(showStatus) {
         showCard();
-        generateCard();
         wrongNumbers.push(usedNumbers[usedNumbers.length - 1]);
+        generateCard();
     }
 }
-
-
-
-
-
-
-
-
-/*
-
-let numbers = [];
-function right(){
-    showCard();
-    changeCards();
-    console.log(numbers)
+function retry() {
+    usedNumbers = [];
+    wrongNumbers = [];
+    swapStatus = true;
+    showStatus = false;
+    loadHiragana();
+    updateProgress();
+    generateCard();
+    const element = document.getElementById("end");
+    element.classList.toggle("yes");
+    element.classList.toggle("no");
 }
-function changeCards() {
-    let zahl = proof();
-    const one = document.getElementById("one");
-    const content = document.getElementById("content");
-    one.innerText = hiragana[zahl][0];
-    content.innerText = hiragana[zahl][1];
-}
-function proof() {
-    let i = true;
-    let zahl;
-    while(i) {
-        i = false;
-        zahl = randomNumber();
-        for(let j in numbers) {
-            if(j == zahl) {
-                i = true;
-            }
-        }
-    }
-    numbers.push(zahl);
-    return zahl;
-}
-
-
-changeCards();
-*/
