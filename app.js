@@ -3,9 +3,16 @@ let usedNumbers = [];
 let wrongNumbers = [];
 let swapStatus = true;
 let showStatus = false;
+const password = 'myPassword123';
 loadHiragana();
 function loadHiragana() {
-    hiragana = [
+    fetch(`http://193.196.124.144:3000/api/${password}`)
+        .then(response => response.json())
+        .then((data) => {
+            hiragana = data;
+        })
+        .catch(error => console.error(error));
+    /* hiragana = [
         ['あ', 'a'],
         ['い', 'i'],
         ['う', 'u'],
@@ -113,7 +120,7 @@ function loadHiragana() {
         ['ぴゃ', 'pya'],
         ['ぴゅ', 'pyu'],
         ['ぴょ', 'pyo']
-    ];
+    ];*/
 }
 updateProgress();
 function updateProgress() {
